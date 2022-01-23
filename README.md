@@ -1,17 +1,17 @@
 # nvchad-config
-  基于NvChad的nvim配置。
+  macOS上基于NvChad的nvim配置。
 
 ## Install
-   clone the `nvchad-config` repository to `~/.config/nvim/custom`.
-
-   ```sh
+   1. download `vimr` from https://github.com/qvacua/vimr
+   2. clone `NvChad` repository from https://github.com/NvChad/NvChad
+   3. clone the `nvchad-config` repository to `~/.config/nvim/custom`.
+      ```sh
    git clone https://github.com/georgealbert/nvchad-config ~/.config/nvim/custom
-   ```
+      ```
 
-## find/grep file in project
-   查找project的root dir时，用了`nvim-lspconfig`里的`util.find_git_ancestor()`。`nvim-lspconfig`是`NvChad`依赖的package。
-
-## which-key
+## 增加的功能
+### Find/Grep file in project
+    查找project的root dir时，用了`nvim-lspconfig`里的`util.find_git_ancestor()`。`nvim-lspconfig`是`NvChad`依赖的package。
 
 ## Default mapping
 
@@ -26,3 +26,8 @@
 | `<D-r>`        | ("Option key"+r)grep file in project                 |
 | `<D-f>`        | Grep file in current dir                             |
 | `<C-c>/<C-/>`  | Comment current line                                 |
+
+## 增加的plugin
+### nvim-lsp-installer
+### which-key
+    效果和emacs的`which-key`一样。非常流畅。
