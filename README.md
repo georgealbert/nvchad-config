@@ -3,7 +3,11 @@
 
 ## Install
    1. download `vimr` from https://github.com/qvacua/vimr
+
    2. clone `NvChad` repository from https://github.com/NvChad/NvChad
+   ```sh
+   git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+   ```
    3. clone the `nvchad-config` repository to `~/.config/nvim/custom`.
 
 ```sh
@@ -12,7 +16,7 @@ git clone https://github.com/georgealbert/nvchad-config ~/.config/nvim/custom
 
 ## 增加的功能
 ### Find/Grep file in project
-    查找project的root dir时，用了`nvim-lspconfig`里的`util.find_git_ancestor()`。`nvim-lspconfig`是`NvChad`依赖的package。
+查找project的root dir时，用了`nvim-lspconfig`里的`util.find_git_ancestor()`。`nvim-lspconfig`是`NvChad`依赖的package。
 
 ## Default mapping
 
@@ -31,4 +35,4 @@ git clone https://github.com/georgealbert/nvchad-config ~/.config/nvim/custom
 ## 增加的plugin
 ### nvim-lsp-installer
 ### which-key
-    效果和emacs的`which-key`一样。非常流畅。
+效果和emacs的`which-key`一样。非常流畅。
