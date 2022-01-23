@@ -8,11 +8,11 @@
    ```sh
    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
    ```
-   3. clone the `nvchad-config` repository to `~/.config/nvim/custom`.
 
-```sh
-git clone https://github.com/georgealbert/nvchad-config ~/.config/nvim/custom
-```
+   3. clone the `nvchad-config` repository to `~/.config/nvim/custom`.
+   ```sh
+   git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/custom
+   ```
 
 ## 增加的功能
 ### Find/Grep file in project
