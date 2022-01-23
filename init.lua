@@ -10,8 +10,9 @@ ffip = {} -- Find file in project. global variable, module name.
 
 function ffip.find_file_in_dir(opts)
   opts = opts or {}
-  -- opts.cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
   opts.cwd = vim.fn.expand('%:p:h')
+  opts.no_ignore = true
+
   require'telescope.builtin'.find_files(opts)
 end
 
