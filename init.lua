@@ -33,8 +33,6 @@ function ffip.find_file_in_project(opts)
   require'telescope.builtin'.find_files(opts)
 end
 
--- live_grep
--- utils.buffer_dir()
 function ffip.grep_file_in_dir(opts)
   opts = opts or {}
   -- opts.cwd = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
@@ -83,10 +81,6 @@ map("n", "<leader>fd", ":lua ffip.find_file_in_dir()<CR>")
 map("n", "<leader>fp", ":lua ffip.find_file_in_project()<CR>")
 map("n", "<D-f>", ":lua ffip.grep_file_in_dir()<CR>")
 map("n", "<D-r>", ":lua ffip.grep_file_in_project()<CR>")
--- map("n", "<D-r>", ":lua grep_file_in_dir()<CR>")
--- map("n", "<M-f>f", ":lua grep_file_in_dir()<CR>")
--- map("n", "<A-f>f", ":lua grep_file_in_dir()<CR>")
--- map("n", "<leader>fa", ":lua require('telescope.builtin').find_files(vim.fn.expand('%:p:h'))<CR>")
 
 -- map("n", "<leader>q", ":q <CR>")
 -- NOTE: the 4th argument in the map function can be a table i.e options but its most likely un-needed so dont worry about it
