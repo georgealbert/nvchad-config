@@ -5,9 +5,10 @@
    1. download `vimr` from https://github.com/qvacua/vimr
    2. clone `NvChad` repository from https://github.com/NvChad/NvChad
    3. clone the `nvchad-config` repository to `~/.config/nvim/custom`.
-      ```sh
-   git clone https://github.com/georgealbert/nvchad-config ~/.config/nvim/custom
-      ```
+
+```sh
+git clone https://github.com/georgealbert/nvchad-config ~/.config/nvim/custom
+```
 
 ## 增加的功能
 ### Find/Grep file in project
