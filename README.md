@@ -11,7 +11,7 @@
 
    3. clone the `nvchad-config` repository to `~/.config/nvim/custom`.
    ```sh
-   git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/custom
+   git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/lua/custom
    ```
 
 ## 增加的功能
