@@ -36,3 +36,33 @@
 ### nvim-lsp-installer
 ### which-key
 效果和emacs的`which-key`一样。非常流畅。
+
+## 题外话
+### git
+
+1. proxy
+```sh
+# 设置proxy
+git config --global http.proxy 'socks5://127.0.0.1:7890'
+git config --global https.proxy 'socks5://127.0.0.1:7890'
+
+# 取消proxy
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+2. autocrlf
+   
+macos中，如果不设置autocrlf，checkout时，vim文件经常是dos格式的，导致nvchad的telescope等多个plugin不生效。
+
+```sh
+git config --global core.autocrlf input
+```
+
+使用`dos2unix`命令批量修改已checkout的vim的行结束符为`LF`。`dos2unix`可以通过`brew install dos2unix`来安装。
+```sh
+find . -name '*.vim' -exec dos2unix {} \;
+```
+
+### whichwrap
+习惯移动到行首行末时，cursor不会移动到上一行或下一行，`NvChad`把`whichwrap`改为`<,>,h,l,b,s`了，vim的`whichwrap`默认是`b,s`。只能在`lua/core/options.lua`注释掉。
