@@ -15,6 +15,10 @@ M.options = {
 }
 
 M.plugins = {
+   status = {
+      -- bufferline = false, -- manage and preview opened buffers
+      better_escape = false, -- map to <ESC> with no lag
+   },
    options = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
