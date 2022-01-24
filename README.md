@@ -3,8 +3,10 @@
 
 ## Install
    1. download `vimr` from https://github.com/qvacua/vimr
+   当前版本为：v0.36.0-20220102.161018
 
    2. clone `NvChad` repository from https://github.com/NvChad/NvChad
+   当前版本为：`20e8249`
    ```sh
    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
    ```
