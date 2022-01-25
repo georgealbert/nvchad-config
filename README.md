@@ -3,7 +3,7 @@
 
 ## Install
    1. download `vimr` from https://github.com/qvacua/vimr
-   当前版本为：v0.36.0-20220102.161018
+   当前版本为：`v0.36.0-20220102.161018`
 
    2. clone `NvChad` repository from https://github.com/NvChad/NvChad
    当前版本为：`20e8249`
@@ -35,9 +35,16 @@
 | `<C-c>/<C-/>`  | Comment current line                                 |
 
 ## 增加的plugin
+
 ### nvim-lsp-installer
+安装lsp server方便多了。
+
 ### which-key
-效果和emacs的`which-key`一样。非常流畅。
+键绑定实在是太多了，记不住。用了`which-key`以后，爽了。效果和emacs的`which-key`一样。非常流畅。
+
+## TODO
+### Telescope的模糊查询
+为什么查询的结果这么奇怪，`keyword1 keyword2`这样的查询结果太多了。
 
 ## 题外话
 ### git
