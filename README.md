@@ -1,20 +1,23 @@
 # nvchad-config
-  macOS上基于NvChad的nvim配置。
+macOS上基于`NvChad`的nvim配置。
 
 ## Install
-   1. download `vimr` from https://github.com/qvacua/vimr
-   当前版本为：`v0.36.0-20220102.161018`
 
-   2. clone `NvChad` repository from https://github.com/NvChad/NvChad
-   当前版本为：`20e8249`
-   ```sh
-   git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-   ```
+1. download `vimr` from https://github.com/qvacua/vimr
+当前版本为：`v0.36.0-20220102.161018`
 
-   3. clone the `nvchad-config` repository to `~/.config/nvim/custom`.
-   ```sh
-   git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/lua/custom
-   ```
+貌似`vimr`是在macOS上比较好的`neovim`的实现。
+
+2. clone `NvChad` repository from https://github.com/NvChad/NvChad
+当前版本为：`20e8249`
+```sh
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+```
+
+3. clone the `nvchad-config` repository to `~/.config/nvim/custom`.
+```sh
+git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/lua/custom
+```
 
 ## 增加的功能
 ### Find/Grep file in project
@@ -44,12 +47,20 @@
 
 ## TODO
 ### Telescope的模糊查询
-为什么查询的结果这么奇怪，`keyword1 keyword2`这样的查询结果太多了。
+为什么查询的结果这么奇怪，`keyword1 keyword2`这样的查询结果太多了。和emacs的ivy的查询习惯相差太大了。
+
+### magit
+找到一个vim中的`magit` https://github.com/TimUntersberger/neogit，有空试试。
+
+### 代码浏览时gd、gi跳转后怎么回到原来的代码上？
 
 ## 题外话
 ### git
 
 1. proxy
+
+国内如果不设置代理，上github犹如登天。如果不用代理，也可以在clone时用ssh方式，或者在已经clone的repo中修改`.git/config`把https方式改为ssh方式。如果要commit代码，那必须是ssh方式。
+
 ```sh
 # 设置proxy
 git config --global http.proxy 'socks5://127.0.0.1:7890'
@@ -74,4 +85,4 @@ find . -name '*.vim' -exec dos2unix {} \;
 ```
 
 ### whichwrap
-习惯移动到行首行末时，cursor不会移动到上一行或下一行，`NvChad`把`whichwrap`改为`<,>,h,l,b,s`了，vim的`whichwrap`默认是`b,s`。只能在`lua/core/options.lua`注释掉。
+在emacs和vim中，习惯移动到行首行末时，cursor不会移动到上一行或下一行。`NvChad`把`whichwrap`改为`<,>,h,l,b,s`了，vim的`whichwrap`默认是`b,s`。只能在`lua/core/options.lua`注释掉或者`:set whichwrap=b,s`。
