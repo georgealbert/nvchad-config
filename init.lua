@@ -82,6 +82,8 @@ map("n", "<leader>fp", ":lua ffip.find_file_in_project()<CR>")
 map("n", "<D-f>", ":lua ffip.grep_file_in_dir()<CR>")
 map("n", "<D-r>", ":lua ffip.grep_file_in_project()<CR>")
 
+map("n", "<C-x>g", ":lua require('neogit').open({ kind = 'vsplit', cwd = vim.fn.expand('%:p:h') })<CR>")
+
 -- map("n", "<leader>q", ":q <CR>")
 -- NOTE: the 4th argument in the map function can be a table i.e options but its most likely un-needed so dont worry about it
 
@@ -91,6 +93,14 @@ local customPlugins = require "core.customPlugins"
 customPlugins.add(function(use)
       use {
          "williamboman/nvim-lsp-installer",
+         -- opt = true
+         -- lazy_load = true,
+      }
+
+      use {
+        "TimUntersberger/neogit",
+        -- opt = true,
+        -- cmd = {'Neogit'},
       }
 
       -- https://github.com/folke/which-key.nvim
