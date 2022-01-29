@@ -105,7 +105,7 @@ customPlugins.add(function(use)
 
       use {
         "TimUntersberger/neogit",
-        -- opt = true,
+        module = "neogit",
         -- cmd = {'Neogit'},
       }
 
