@@ -3,6 +3,12 @@
 -- This is where your custom modules and plugins go.
 -- Please check NvChad docs if you're totally new to nvchad + dont know lua!!
 
+-- https://vi.stackexchange.com/questions/5196/how-to-change-the-behavior-of-cursor-motions-ex-go-from-one-line-to-the-end-o
+-- nvchad的cursor移动不合我的习惯，在emacs和vim中，到行末再按h和l时，cursor是不会移动到下一行的。
+
+-- MacVim的whichwrap=b,s
+vim.opt.whichwrap = "b,s"
+
 -- MAPPINGS
 local map = require("core.utils").map
 
