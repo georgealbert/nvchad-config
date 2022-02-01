@@ -1,11 +1,6 @@
--- This is an example init file , its supposed to be placed in /lua/custom/
-
--- This is where your custom modules and plugins go.
--- Please check NvChad docs if you're totally new to nvchad + dont know lua!!
-
 -- https://vi.stackexchange.com/questions/5196/how-to-change-the-behavior-of-cursor-motions-ex-go-from-one-line-to-the-end-o
--- nvchad的cursor移动不合我的习惯，在emacs和vim中，到行末再按h和l时，cursor是不会移动到下一行的。
-
+-- NvChad的cursor移动不合我的习惯，在emacs和vim中，到行末再按h和l时，cursor是不会移动到下一行的。
+-- 在custom/chadrc.lua中设置无效，只能在custom/init.lua中设置
 -- MacVim的whichwrap=b,s
 vim.opt.whichwrap = "b,s"
 
@@ -83,68 +78,17 @@ map("n", "<C-c><C-/>", ":lua require('Comment.api').toggle_current_linewise()<CR
 map("v", "<C-c><C-/>", ":lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>")
 
 
+map("n", "<leader>ff", ":lua ffip.find_file_in_dir()<CR>")
 map("n", "<leader>fd", ":lua ffip.find_file_in_dir()<CR>")
 map("n", "<leader>fp", ":lua ffip.find_file_in_project()<CR>")
 map("n", "<D-f>", ":lua ffip.grep_file_in_dir()<CR>")
 map("n", "<D-r>", ":lua ffip.grep_file_in_project()<CR>")
 
 map("n", "<C-x>g", ":lua require('neogit').open({ kind = 'vsplit', cwd = vim.fn.expand('%:p:h') })<CR>")
+-- map("n", "<C-x>g", ":Neogit cwd=%:p:h kind=vsplit <CR>")
 
 -- map("n", "<leader>q", ":q <CR>")
 -- NOTE: the 4th argument in the map function can be a table i.e options but its most likely un-needed so dont worry about it
-
--- Install plugins
-local customPlugins = require "core.customPlugins"
-
-customPlugins.add(function(use)
-      use {
-         "williamboman/nvim-lsp-installer",
-         -- opt = true
-         -- lazy_load = true,
-      }
-
-      use {
-        "TimUntersberger/neogit",
-        module = "neogit",
-        -- cmd = {'Neogit'},
-      }
-
-      use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make',
-        after = "telescope.nvim",
-        config = function ()
-          -- You dont need to set any of these options. These are the default ones. Only
-          -- the loading is important
-          require('telescope').setup {
-            extensions = {
-              fzf = {
-                fuzzy = false,                    -- false will only do exact matching
-                override_generic_sorter = true,  -- override the generic sorter
-                override_file_sorter = true,     -- override the file sorter
-                case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                -- the default case_mode is "smart_case"
-              }
-            }
-          }
-          -- To get fzf loaded and working with telescope, you need to call
-          -- load_extension, somewhere after setup function:
-          require('telescope').load_extension('fzf')
-        end
-      }
-
-      -- https://github.com/folke/which-key.nvim
-      use {
-        "folke/which-key.nvim",
-        config = function()
-          require("which-key").setup {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-          }
-        end
-      }
-end)
 
 --
 -- which-key's key mapping.
@@ -164,6 +108,7 @@ wk.register({
   -- "<C-/>" = {":lua require('Comment.api').toggle_current_linewise()<CR>", "comment"},
 }, { prefix = "<C-c>" })
 
--- NOTE: we heavily suggest using Packer's lazy loading (with the 'event','cmd' fields)
--- see: https://github.com/wbthomason/packer.nvim
--- https://nvchad.github.io/config/walkthrough
+-- wk.register({
+--   g = { ":lua require('neogit').open({ kind = 'vsplit', cwd = vim.fn.expand('%:p:h') })<cr>", "neogit status" },
+--   -- g = { "<cmd>Neogit cwd=%:p:h kind=vsplit <CR>", "neogit status" },
+-- }, { prefix = "<C-x>" })

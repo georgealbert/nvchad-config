@@ -49,6 +49,12 @@ git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/lua/custom
 ### Telescope的模糊查询
 为什么查询的结果这么奇怪，`keyword1 keyword2`这样的查询结果太多了。和emacs的ivy的查询习惯相差太大了。
 
+用了fzf后，fuzzy = false，貌似没效果
+
+用 'abc 才可以精确匹配。
+
+如何知道是否用了fzf，没地方查
+
 ### magit
 找到一个vim中的`magit` https://github.com/TimUntersberger/neogit，有空试试。
 
