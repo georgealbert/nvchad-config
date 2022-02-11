@@ -9,14 +9,14 @@ local M = {}
 
 local present, userPlugins = pcall(require, "custom.plugins")
 if not present then
-   vim.notify("Error loading custom/plugins/init.lua\n\n" .. userPlugins)
+  vim.notify("Error loading custom/plugins/init.lua\n\n" .. userPlugins)
 end
 
 -- :lua print(vim.inspect(require"custom.plugins"))
 -- :lua print(vim.inspect(require"custom.chadrc".plugins.install))
 
 -- Print table(userPlugins)
-vim.notify("Loading custom/plugins/init.lua, table(userPlugins): \n\n" .. vim.inspect(userPlugins))
+-- vim.notify("Loading custom/plugins/init.lua, table(userPlugins): \n\n" .. vim.inspect(userPlugins))
 
 M.options = {
   -- nvchad默认400ms，太快了。MacVim默认是1000ms
@@ -25,18 +25,40 @@ M.options = {
 }
 
 M.plugins = {
-   status = {
-      colorizer = true,
-      better_escape = false, -- map to <ESC> with no lag
-   },
+  status = {
+    colorizer = true,
+    better_escape = false, -- map to <ESC> with no lag
+  },
 
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
+  options = {
+    lspconfig = {
+      setup_lspconf = "custom.plugins.lspconfig",
+    },
+  },
+
+  default_plugin_config_replace = {
+    nvim_tree = {
+      view = {
+        -- side = "right",
+        width = 30,
+        hide_root_folder = false,
+        mappings = {
+          list = {
+            { key = "^", action = "dir_up" },
+            { key = "+", action = "create" },
+          },
+        },
       },
-   },
+    },
+  },
 
-   install = userPlugins,
+  install = userPlugins,
+}
+
+M.mappings = {
+  misc = {
+    copy_to_system_clipboard = "", -- copy selected text (visual mode) or curent line (normal)
+  }
 }
 
 -- M.ui = {
