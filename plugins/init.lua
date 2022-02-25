@@ -11,6 +11,8 @@ return {
     -- cmd = {'Neogit'},
   },
 
+  -- Telescope doesnt use sorters for live_grep.
+  -- https://github.com/nvim-telescope/telescope-fzf-native.nvim/issues/53
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'make',
@@ -21,7 +23,7 @@ return {
       require('telescope').setup {
         extensions = {
           fzf = {
-            fuzzy = false,                    -- false will only do exact matching
+            fuzzy = false,                   -- false will only do exact matching
             override_generic_sorter = true,  -- override the generic sorter
             override_file_sorter = true,     -- override the file sorter
             case_mode = "smart_case",        -- or "ignore_case" or "respect_case"

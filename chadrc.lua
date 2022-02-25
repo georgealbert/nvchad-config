@@ -28,6 +28,7 @@ M.plugins = {
   status = {
     colorizer = true,
     better_escape = false, -- map to <ESC> with no lag
+    -- alpha = true,
   },
 
   options = {
