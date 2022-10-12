@@ -4,12 +4,12 @@ macOS上基于`NvChad`的nvim配置。
 ## Install
 
 1. download `vimr` from https://github.com/qvacua/vimr
-当前版本为：`v0.36.0-20220102.161018`
+当前版本为：`v0.42.2-20220913.230838`
 
 貌似`vimr`是在macOS上比较好的`neovim`的实现。
 
 2. clone `NvChad` repository from https://github.com/NvChad/NvChad
-当前版本为：`20e8249`
+当前版本为：`dc66931`
 ```sh
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 ```
@@ -25,24 +25,33 @@ git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/lua/custom
 
 ## Default mapping
 
-| Mappings       | Action                                               |
-|----------------|------------------------------------------------------|
-| `<C-x>/<C-s>`  | Save file                                            |
-| `<C-c>/n`      | Telescope buffers                                    |
-| `<leader>bb`   | Telescope buffers                                    |
-| `<leader>bk`   | close buffer                                         |
-| `<leader>fp`   | Find file in project                                 |
-| `<leader>fd`   | Find file in current dir                             |
-| `<D-r>`        | ("Option key"+r)grep file in project                 |
-| `<D-f>`        | Grep file in current dir                             |
-| `<C-c>/<C-/>`  | Comment current line                                 |
+| Mappings      | Action                               |
+|---------------|--------------------------------------|
+| `<C-x>/<C-s>` | Save file                            |
+| `<leader>bb`  | Telescope buffers                    |
+| `<leader>bk`  | close buffer                         |
+| `<leader>fp`  | Find file in project                 |
+| `<leader>fd`  | Find file in current dir             |
+| `<D-r>`       | ("Option key"+r)grep file in project |
+| `<D-f>`       | Grep file in current dir             |
+
+## 内置plugin
+
+### nvim-treesitter
+#### 如何安装language的parser
+
+1. 修改了`~/.local/share/nvim/site/pack/packer/opt/nvim-treesitter/lua/nvim-treesitter/shell_command_selectors.lua`里面的curl的参数， "-x http://127.0.0.1:7890",
+2. `:TSInstallSync cpp java` 才行，用`TSInstall`就报错
+3. language的动态链接库在`~/.local/share/nvim/site/pack/packer/opt/nvim-treesitter/parser`目录下
+
+> 必须用代理，curl下载会一直报错，唉
 
 ## 增加的plugin
 
-### nvim-lsp-installer
+### _nvim-lsp-installer_ - 改为meson.vim
 安装lsp server方便多了。
 
-### which-key
+### which-key - 已内置
 键绑定实在是太多了，记不住。用了`which-key`以后，爽了。效果和emacs的`which-key`一样。非常流畅。
 
 ## TODO
@@ -55,7 +64,7 @@ git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/lua/custom
 
 如何知道是否用了fzf，没地方查
 
-### magit
+### magit - neogit 不好用
 找到一个vim中的`magit` https://github.com/TimUntersberger/neogit，有空试试。
 
 ### 代码浏览时gd、gi跳转后怎么回到原来的代码上？
