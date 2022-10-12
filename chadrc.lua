@@ -9,7 +9,7 @@ local M = {}
 
 local present, userPlugins = pcall(require, "custom.plugins")
 if not present then
-   vim.notify("Error loading custom/plugins/init.lua\n\n" .. userPlugins)
+  vim.notify("Error loading custom/plugins/init.lua\n\n" .. userPlugins)
 end
 
 -- :lua print(vim.inspect(require"custom.plugins"))

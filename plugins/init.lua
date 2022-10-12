@@ -1,10 +1,4 @@
 return {
-   
-   -- ['williamboman/nvim-lsp-installer'] =
-   -- {  -- opt = true
-   --   -- lazy_load = true,
-   -- },
-   
    ['TimUntersberger/neogit'] = {
       module = "neogit",
       -- cmd = {'Neogit'},
@@ -36,13 +30,6 @@ return {
    -- https://github.com/folke/which-key.nvim
    ['folke/which-key.nvim'] = {
       disable = false,
-      -- config = function()
-      --   require("which-key").setup {
-      --     -- your configuration comes here
-      --     -- or leave it empty to  the default settings
-      --     -- refer to the configuration section below
-      --   }
-      -- end
    },
 
    ["neovim/nvim-lspconfig"] = {
