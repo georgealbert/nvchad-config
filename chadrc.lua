@@ -16,7 +16,7 @@ end
 -- :lua print(vim.inspect(require"custom.chadrc".plugins.install))
 
 -- Print table(userPlugins)
-vim.notify("Loading custom/plugins/init.lua, table(userPlugins): \n\n" .. vim.inspect(userPlugins))
+-- vim.notify("Loading custom/plugins/init.lua, table(userPlugins): \n\n" .. vim.inspect(userPlugins))
 
 M.options = {
   -- nvchad默认400ms，太快了。MacVim默认是1000ms
@@ -24,20 +24,25 @@ M.options = {
   timeoutlen = 500,
 }
 
-M.plugins = {
-   status = {
-      colorizer = true,
-      better_escape = false, -- map to <ESC> with no lag
-   },
+-- M.plugins = {
+--    status = {
+--       colorizer = true,
+--       better_escape = false, -- map to <ESC> with no lag
+--    },
 
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
-   },
+--    options = {
+--       lspconfig = {
+--          setup_lspconf = "custom.plugins.lspconfig",
+--       },
+--    },
 
-   install = userPlugins,
-}
+--    install = userPlugins,
+-- }
+
+M.plugins = require "custom.plugins"
+
+-- check core.mappings for table structure
+M.mappings = require "custom.mappings"
 
 -- M.ui = {
 --    theme = "gruvchad",

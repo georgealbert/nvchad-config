@@ -93,20 +93,20 @@ map("n", "<C-x>g", ":lua require('neogit').open({ kind = 'vsplit', cwd = vim.fn.
 --
 -- which-key's key mapping.
 --
-local wk = require("which-key")
+-- local wk = require("which-key")
 
-wk.register({
-  b = {
-    name = "file&buffers", -- optional group name
-    b = { "<cmd>Telescope buffers<cr>", "buffers" },
-    k = { ":lua require('core.utils').close_buffer() <CR>", "close buffer"}
-  },
-}, { prefix = "<leader>" })
+-- wk.register({
+--   b = {
+--     name = "file&buffers", -- optional group name
+--     b = { "<cmd>Telescope buffers<cr>", "buffers" },
+--     k = { ":lua require('core.utils').close_buffer() <CR>", "close buffer"}
+--   },
+-- }, { prefix = "<leader>" })
 
-wk.register({
-  n = { "<cmd>Telescope buffers<cr>", "buffers" },
-  -- "<C-/>" = {":lua require('Comment.api').toggle_current_linewise()<CR>", "comment"},
-}, { prefix = "<C-c>" })
+-- wk.register({
+--   n = { "<cmd>Telescope buffers<cr>", "buffers" },
+--   -- "<C-/>" = {":lua require('Comment.api').toggle_current_linewise()<CR>", "comment"},
+-- }, { prefix = "<C-c>" })
 
 -- wk.register({
 --   g = { ":lua require('neogit').open({ kind = 'vsplit', cwd = vim.fn.expand('%:p:h') })<cr>", "neogit status" },
