@@ -30,6 +30,12 @@ M.general = {
          end,
          "close buffer",
       },
+      ["<leader>fl"] = {
+         function()
+            require("vim.lsp.buf").formatting()
+         end,
+         "null-ls formatting",
+      },
    },
 }
 

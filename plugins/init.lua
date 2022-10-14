@@ -59,7 +59,17 @@ return {
             -- "shellcheck",
             -- python
             "pyright",
+            "bash-language",
          },
       },
-   }
+   },
+
+   -- code formatting, linting etc
+   ["jose-elias-alvarez/null-ls.nvim"] = {
+      after = "nvim-lspconfig",
+      config = function()
+         require "custom.plugins.null-ls"
+      end,
+   },
+
 }

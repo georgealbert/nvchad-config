@@ -32,6 +32,7 @@ git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/lua/custom
 | `<leader>bk`  | close buffer                         |
 | `<leader>fp`  | Find file in project                 |
 | `<leader>fd`  | Find file in current dir             |
+| `<leader>fl`  | Code formatting using null-ls.nvim   |
 | `<D-r>`       | ("Option key"+r)grep file in project |
 | `<D-f>`       | Grep file in current dir             |
 
@@ -45,6 +46,32 @@ git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/lua/custom
 3. language的动态链接库在`~/.local/share/nvim/site/pack/packer/opt/nvim-treesitter/parser`目录下
 
 > 必须用代理，curl下载会一直报错，唉
+
+### mason
+
+#### 如何安装lua-language-server
+
+`mason`比`nvim-treesitter`除了默认可以用curl下载，也会用wget，curl和wget都可以通过配置文件设置proxy。
+
+```sh
+$cat ~/.curlrc 
+proxy="http://127.0.0.1:7890"
+```
+
+```sh
+cat ~/.wgetrc 
+http_proxy = http://127.0.0.1:7890/
+https_proxy = http://127.0.0.1:7890/
+use_proxy = on
+# wait = 15
+```
+
+### null-ls.nvim
+
+用于format代码。其他功能未使用
+
+1. python
+使用`autopep8`，使用`pip install autopep8`进行安装。
 
 ## 增加的plugin
 
