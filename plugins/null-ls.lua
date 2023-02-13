@@ -7,14 +7,13 @@ end
 local b = null_ls.builtins
 
 local sources = {
-
   -- webdev stuff
   b.formatting.deno_fmt,
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "python"} },
 
   -- python
   b.formatting.autopep8,
-  
+
   -- Lua
   -- b.formatting.stylua,
 
@@ -28,6 +27,6 @@ local sources = {
 }
 
 null_ls.setup {
-  debug = true,
+  debug = false,
   sources = sources,
 }
