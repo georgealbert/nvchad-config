@@ -25,11 +25,11 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "clangd", "pyright", "bashls", "sumneko_lua"}
+local lsp_config = require "lspconfig"
+local servers = { "html", "cssls", "clangd", "pyright", "bashls", "lua_ls"}
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lsp_config[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
