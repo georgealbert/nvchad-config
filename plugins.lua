@@ -161,11 +161,6 @@ local plugins = {
   },
 
   {
-     "NvChad/ui",
-     opts = overrides.ui,
-  },
-
-  {
      url = "git@github.com:luukvbaal/nnn.nvim",
      enabled = false,
      cmd = { "NnnExplorer", "NnnPicker" },
