@@ -60,19 +60,6 @@ M.telescope = {
          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
          -- the default case_mode is "smart_case"
       },
-      -- file_browser = {
-      --    -- theme = "dropdown",
-      --    mappings = {
-      --       ["n"] = {
-      --          -- your custom normal mode mappings
-      --          -- ["+"] = require("telescope._extensions.file_browser.actions").create,
-      --          -- ["h"] = require("telescope._extensions.file_browser.actions").goto_parent_dir,
-      --          ["/"] = function()
-      --             vim.cmd('startinsert')
-      --          end
-      --       },
-      --    },
-      -- },
    },
    extensions_list = { "themes", "terms", "file_browser", "fzf" },
 }
