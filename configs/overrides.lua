@@ -52,6 +52,10 @@ M.nvimtree = {
 }
 
 M.telescope = {
+   defaults = {
+      -- 滚动到顶和底时不会循环
+      scroll_strategy = "limit",
+   },
    extensions = {
       fzf = {
          fuzzy = false,                    -- false will only do exact matching
