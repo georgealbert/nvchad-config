@@ -42,10 +42,16 @@ M.nvimtree = {
     enable = false,
   },
   renderer = {
+    root_folder_label = ":~:s?$?/..?",
     highlight_git = true,
     icons = {
       show = {
         git = true,
+      },
+      glyphs = {
+         folder = {
+            default = "",
+         },
       },
     },
   },
@@ -65,6 +71,7 @@ M.telescope = {
          -- the default case_mode is "smart_case"
       },
    },
+   -- extensions_list = { "themes", "terms", "file_browser", "fzf", "software-licenses" },
    extensions_list = { "themes", "terms", "file_browser", "fzf" },
 }
 
