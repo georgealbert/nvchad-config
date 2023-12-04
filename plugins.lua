@@ -31,6 +31,7 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
+    enabled = true,
   },
 
   -- Install a plugin
@@ -157,7 +158,8 @@ local plugins = {
   },
 
   {
-     url = "git@github.com:nvim-telescope/telescope-fzf-native.nvim"
+     -- url = "git@github.com:nvim-telescope/telescope-fzf-native.nvim"
+     "nvim-telescope/telescope-fzf-native.nvim"
   },
 
   {
