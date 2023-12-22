@@ -128,3 +128,15 @@ find . -name '*.vim' -exec dos2unix {} \;
 
 ### whichwrap
 在emacs和vim中，习惯移动到行首行末时，cursor不会移动到上一行或下一行。`NvChad`把`whichwrap`改为`<,>,h,l,b,s`了，vim的`whichwrap`默认是`b,s`。只能在`lua/core/options.lua`注释掉或者`:set whichwrap=b,s`。
+
+### popupmenukeys
+总是记不住在popup menu里面如何选择和删除。如 `:edit ~/` 时怎么选择补全
+
+可以看help `:help popup-menu-keys`。
+
+| Mappings | Action                                                        |
+|----------|---------------------------------------------------------------|
+| `C-y`    | Yes: Accept the currently selected match and stop completion. |
+| `C-w`    | 删除补全内容，如果有`/`，会先删除，再按一次删除到上级目录     |
+| `C-n`    | Select the next match                                         |
+| `C-p`    | Select the previous match                                     |
