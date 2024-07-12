@@ -4,20 +4,11 @@ macOS上基于`NvChad`的nvim配置。
 ## Install
 
 1. download `vimr` from https://github.com/qvacua/vimr
-当前版本为：`v0.42.2-20220913.230838`
+当前版本为：`v0.47.5`
 
 貌似`vimr`是在macOS上比较好的`neovim`的实现。
 
-2. clone `NvChad` repository from https://github.com/NvChad/NvChad
-当前版本为：`dc66931`
-```sh
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-```
-
-3. clone the `nvchad-config` repository to `~/.config/nvim/custom`.
-```sh
-git clone git@github.com:georgealbert/nvchad-config ~/.config/nvim/lua/custom
-```
+2. clone `starter` repository from https://github.com/NvChad/starter
 
 ## 增加的功能
 ### Find/Grep file in project
