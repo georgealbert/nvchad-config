@@ -5,7 +5,9 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
+
+-- map("i", "jk", "<ESC>")
+
 map("n", "<space>cn", ":Telescope file_browser path=%:p:h respect_gitignore=false select_buffer=true previewer=false initial_mode=normal<CR>",
     { desc = "telescope file browser" })
 

@@ -11,12 +11,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- https://vi.stackexchange.com/questions/5196/how-to-change-the-behavior-of-cursor-motions-ex-go-from-one-line-to-the-end-o
--- NvChad的cursor移动不合我的习惯，在emacs和vim中，到行末再按h和l时，cursor是不会移动到下一行的。
--- 在custom/chadrc.lua中设置无效，只能在custom/init.lua中设置
--- MacVim的whichwrap=b,s
-vim.opt.whichwrap = "b,s"
-
 local lazy_config = require "configs.lazy"
 
 -- load plugins
@@ -94,15 +88,15 @@ if vim.g.neovide then
         vim.g.neovide_input_ime = false
     end
   end
-  
+
   local ime_input = vim.api.nvim_create_augroup("ime_input", { clear = true })
-  
+
   vim.api.nvim_create_autocmd({ "InsertEnter", "InsertLeave" }, {
       group = ime_input,
       pattern = "*",
       callback = set_ime
   })
-  
+
   vim.api.nvim_create_autocmd({ "CmdlineEnter", "CmdlineLeave" }, {
       group = ime_input,
       pattern = "[/\\?]",
