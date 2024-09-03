@@ -11,6 +11,7 @@ return {
       "nvim-telescope/telescope.nvim",
       dependencies = {
          -- How to correctly add telescope-fzf-native? https://github.com/NvChad/NvChad/issues/2111
+         -- Token: 'wild ,exact-match (quoted), Items that include "wild".
          'nvim-telescope/telescope-fzf-native.nvim',
          -- build = 'make',
          -- lazy = false,
