@@ -9,10 +9,29 @@ return {
 
    {
       "nvim-telescope/telescope.nvim",
+      dependencies = {
+         -- How to correctly add telescope-fzf-native? https://github.com/NvChad/NvChad/issues/2111
+         'nvim-telescope/telescope-fzf-native.nvim',
+         -- build = 'make',
+         -- lazy = false,
+         lazy = true,
+         config = function ()
+            require('telescope').load_extension('fzf')
+         end
+      },
       opts = {
          defaults = {
             -- 滚动到顶和底时不会循环
             scroll_strategy = "limit",
+         },
+      },
+      extensions = {
+         fzf = {
+            fuzzy = false,                   -- false will only do exact matching
+            override_generic_sorter = true,  -- override the generic sorter
+            override_file_sorter = true,     -- override the file sorter
+            case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                             -- the default case_mode is "smart_case"
          },
       },
    },
@@ -89,7 +108,7 @@ return {
                   },
                },
             },
-                                    }
+      }
       end,
    },
 
@@ -121,9 +140,10 @@ return {
             "html",
             "css",
             "javascript",
-            "c",
-            "markdown",
-            "markdown_inline",
+            -- "c",
+            -- "markdown",
+            -- "markdown_inline",
+            "python",
          },
          indent = {
             enable = true,
