@@ -10,3 +10,7 @@ require "nvchad.options"
 -- 在custom/chadrc.lua中设置无效，只能在custom/init.lua中设置
 -- MacVim的whichwrap=b,s
 vim.opt.whichwrap = "b,s"
+
+-- https://github.com/lewis6991/gitsigns.nvim/wiki/FAQ
+vim.api.nvim_set_hl(0, 'GitsignsCurrentLineBlame', { fg = 'white', bg = 'black' })
+-- vim.api.nvim_set_hl(0, 'GitsignsCurrentLineBlame', { link = 'Todo' })

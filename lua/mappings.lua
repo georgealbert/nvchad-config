@@ -17,3 +17,6 @@ map("n", "<space>cn", ":Telescope file_browser path=%:p:h respect_gitignore=fals
 -- end, { desc = "buffer close" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+map("n", "<space>gg", ":Gitsigns blame<CR>", { desc = "Gitsigns blame" })
+map("n", "<space>gh", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Gitsigns current_line_blame" })
