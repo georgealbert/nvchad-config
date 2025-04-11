@@ -14,3 +14,7 @@ vim.opt.whichwrap = "b,s"
 -- https://github.com/lewis6991/gitsigns.nvim/wiki/FAQ
 vim.api.nvim_set_hl(0, 'GitsignsCurrentLineBlame', { fg = 'white', bg = 'black' })
 -- vim.api.nvim_set_hl(0, 'GitsignsCurrentLineBlame', { link = 'Todo' })
+
+-- markdown fold
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
